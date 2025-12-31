@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Albedo MLBB | Gaming Channel</title>
+  <meta name="description" content="MLBB gameplay, hero guides, and cinematic edits by Albedo MLBB." />
+  <meta name="author" content="Albedo MLBB" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b0e;
+      --text: #e5e5e5;
+      --muted: #9ca3af;
+      --accent: #b91c1c;
+      --card: #14141a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* SECTIONS */
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid #1f1f2a;
+    }
+
+    /* SUBTLE GRAIN */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Albedo MLBB</h1>
+    <p>
+      MLBB gameplay, hero mastery, and cinematic edits.  
+      Strategy over noise. Precision over hype.
+    </p>
+    <a class="btn" href="#content">Explore</a>
+  </section>
+
+  <!-- CONTENT -->
+  <section id="content">
+    <h2>Content Focus</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🎮 Gameplay</h3>
+        <p>High-level MLBB matches with clean decision-making and calm execution.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Guides</h3>
+        <p>Hero builds, positioning, and mindset — no clickbait, just clarity.</p>
+      </div>
+      <div class="card">
+        <h3>🎬 Cinematic Edits</h3>
+        <p>Minimal, story-driven highlights inspired by anime pacing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND -->
+  <section>
+    <h2>Creator Philosophy</h2>
+    <p style="max-width:700px;color:var(--muted)">
+      This channel is built on patience, consistency, and silent improvement.  
+      No rush. No shortcuts. Just mastery over time.
+    </p>
+  </section>
+
+  <!-- LINKS -->
+  <section>
+    <h2>Connect</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>YouTube</h3>
+        <p><a href="#" target="_blank">youtube.com/@albedomlbb</a></p>
+      </div>
+      <div class="card">
+        <h3>Instagram</h3>
+        <p><a href="#" target="_blank">@albedo.mlbb</a></p>
+      </div>
+      <div class="card">
+        <h3>Discord</h3>
+        <p>Community coming soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Fan-made website. All game characters and assets belong to their respective owners.<br>
+      © 2025 Albedo MLBB
+    </p>
+  </footer>
+
+</body>
+</html>
