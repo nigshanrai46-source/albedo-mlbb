@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Albedo MLBB | Gaming Channel</title>
-  <meta name="description" content="MLBB gameplay, hero guides, and cinematic edits by Albedo MLBB." />
-  <meta name="author" content="Albedo MLBB" />
 
-  <!-- Google Font -->
+  <meta name="description" content="MLBB gameplay, hero mastery, and cinematic edits by Albedo MLBB." />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -25,22 +24,36 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 90px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      letter-spacing: 0.5px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
     a {
       color: var(--accent);
       text-decoration: none;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
     }
 
     /* HERO */
@@ -50,10 +63,11 @@
       flex-direction: column;
       justify-content: center;
       text-align: center;
+      animation: fadeIn 1.6s ease forwards;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 600;
       margin-bottom: 10px;
     }
@@ -64,58 +78,90 @@
       margin: 0 auto 30px;
     }
 
-    .hero .btn {
+    .btn {
       display: inline-block;
       border: 1px solid var(--accent);
-      padding: 12px 30px;
+      padding: 12px 32px;
       border-radius: 30px;
-      transition: 0.3s;
+      transition: all 0.4s ease;
     }
 
-    .hero .btn:hover {
+    .btn:hover {
       background: var(--accent);
       color: #fff;
+      transform: translateY(-2px);
     }
 
-    /* SECTIONS */
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
     .card {
       background: var(--card);
       padding: 25px;
-      border-radius: 12px;
-      transition: 0.3s;
+      border-radius: 14px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(.22,.61,.36,1);
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* VIDEO */
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ANIME STYLE FADE */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s ease;
+    }
+
+    .fade-section.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
+      padding: 50px 20px;
       color: var(--muted);
       border-top: 1px solid #1f1f2a;
+      font-size: 0.9rem;
     }
 
-    /* SUBTLE GRAIN */
+    /* FILM GRAIN */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
       pointer-events: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -125,67 +171,81 @@
   <!-- HERO -->
   <section class="hero">
     <h1>Albedo MLBB</h1>
-    <p>
-      MLBB gameplay, hero mastery, and cinematic edits.  
-      Strategy over noise. Precision over hype.
-    </p>
-    <a class="btn" href="#content">Explore</a>
+    <p>MLBB gameplay, hero mastery, and cinematic edits.  
+    Strategy over noise. Precision over hype.</p>
+    <a href="#videos" class="btn">Watch</a>
   </section>
 
   <!-- CONTENT -->
-  <section id="content">
+  <section class="fade-section">
     <h2>Content Focus</h2>
     <div class="grid">
       <div class="card">
         <h3>🎮 Gameplay</h3>
-        <p>High-level MLBB matches with clean decision-making and calm execution.</p>
+        <p>Clean decision-making and high-level ranked matches.</p>
       </div>
       <div class="card">
         <h3>🧠 Guides</h3>
-        <p>Hero builds, positioning, and mindset — no clickbait, just clarity.</p>
+        <p>Hero builds, rotations, and positioning.</p>
       </div>
       <div class="card">
         <h3>🎬 Cinematic Edits</h3>
-        <p>Minimal, story-driven highlights inspired by anime pacing.</p>
+        <p>Anime-inspired pacing with minimal effects.</p>
       </div>
     </div>
   </section>
 
-  <!-- BRAND -->
-  <section>
+  <!-- VIDEOS -->
+  <section id="videos" class="fade-section">
+    <h2>Featured Videos</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/https://youtu.be/dl43bb3kTYI?si=LKIE3dp29yjXkVll" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/https://youtu.be/YRjK4AYY9qQ?si=yvF0__szmDN3Ug5n" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/https://youtu.be/zaA_I2uMMuY?si=UEh49rdgmFZSW0Hh" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="fade-section">
     <h2>Creator Philosophy</h2>
     <p style="max-width:700px;color:var(--muted)">
-      This channel is built on patience, consistency, and silent improvement.  
+      Built on patience, discipline, and silent improvement.  
       No rush. No shortcuts. Just mastery over time.
     </p>
   </section>
 
-  <!-- LINKS -->
-  <section>
-    <h2>Connect</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>YouTube</h3>
-        <p><a href="#" target="_blank">youtube.com/@albedomlbb</a></p>
-      </div>
-      <div class="card">
-        <h3>Instagram</h3>
-        <p><a href="#" target="_blank">@albedo.mlbb</a></p>
-      </div>
-      <div class="card">
-        <h3>Discord</h3>
-        <p>Community coming soon</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer>
-    <p>
-      Fan-made website. All game characters and assets belong to their respective owners.<br>
-      © 2025 Albedo MLBB
-    </p>
+    Fan-made website. MLBB and related assets belong to their respective owners.<br>
+    © 2025 Albedo MLBB
   </footer>
+
+  <!-- JS: ANIME SCROLL EFFECT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card, .fade-section').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
